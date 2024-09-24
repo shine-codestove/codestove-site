@@ -1,18 +1,18 @@
 # main links
 main:
-  - title: "Theme Documentation"
-    url: https://perstarke-webdev.de/oneflow-jekyll-theme
-    blank: true
-    description: "The documentation for this theme, on https://perstarke-webdev.de"
-  - title: "Section 1"
-    url: /#section-1
+  - title: "Enterprise Software"
+    url: /#enterprise-software
     blank: false
-  - title: "Section 2"
-    url: /#section-2
+    description: "엔터프라이즈 소프트웨어 설계와 개발"
+  - title: "AIoT"
+    url: /#aiot
     blank: false
-  - title: "Section 3"
-    url: /#section-3
+    description: "인공지능과 사물인터넷 기술"
+  - title: "IoT Business"
+    url: /#iot-business
     blank: false
-  - title: "Section 4"
-    url: /#section-4
+    description: "소규모대기배출시설 측정기기"
+  - title: "Contact Us"
+    url: /#contact-us
     blank: false
+    description: "문의하기"
