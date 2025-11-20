@@ -137,6 +137,113 @@ Active plugins (github-pages compatible):
 - jekyll-algolia: Search integration (configured but may not be active)
 - jemoji: GitHub-style emoji support
 
+## Deployment Configuration
+
+### Git Remotes
+This repository has two remotes configured:
+```bash
+origin           https://github.com/shine-codestove/codestove-site.git  # Development repo
+codestove.io     https://github.com/ryoostar/codestove.io               # Production repo
+```
+
+### Deployment Process
+```bash
+# 1. Test locally with Docker
+docker compose up
+
+# 2. Commit changes
+git add -A
+git commit -m "Your commit message"
+
+# 3. Push to production repository
+git push codestove.io main
+
+# 4. GitHub Pages will automatically build and deploy (1-2 minutes)
+```
+
+### _config.yml Production Settings
+```yaml
+url: "https://codestove.io"
+baseurl: ""  # Empty for root domain
+repository: "ryoostar/codestove.io"
+show-popup: false  # Cookie banner disabled
+```
+
+### GitHub Pages Configuration
+- **Custom Domain**: www.codestove.io (defined in CNAME file)
+- **HTTPS Enforcement**: Enabled
+- **Source Branch**: main
+- **Build**: Automatic via GitHub Actions
+
+### DNS Configuration
+Domain registrar settings for codestove.io:
+
+**Apex Domain (A Records):**
+```
+Type: A
+Name: @ (or leave empty)
+Values:
+  185.199.108.153
+  185.199.109.153
+  185.199.110.153
+  185.199.111.153
+```
+
+**www Subdomain (CNAME):**
+```
+Type: CNAME
+Name: www
+Value: ryoostar.github.io
+```
+
+**URL Behavior:**
+- codestove.io → redirects to → https://www.codestove.io
+- www.codestove.io → https://www.codestove.io
+- All HTTP requests → redirects to → HTTPS
+
+### Custom Design Features (Added 2025-11-20)
+
+**CSS Customizations** (`assets/css/custom-styles.css`):
+- Fade-in animations for sections (opacity-based to avoid transform conflicts)
+- Enhanced gallery card hover effects with shadows and scale
+- Professional contact cards with icons and hover animations
+- AI & Tech highlight boxes with gradient backgrounds
+- Section header underlines with gradient effect
+- Smooth scroll behavior
+- Responsive design for mobile/tablet/desktop
+
+**Design Components:**
+- **AI Highlight Box**: Purple gradient, brain icon, AI development message
+- **Tech Highlight Box**: Cyan gradient, layer icon, full-stack technology message
+- **Contact Cards**: Email, Phone, Location with Font Awesome icons
+- **Gallery Enhancements**: Border radius, shadow effects, hover transformations
+
+**Important Design Notes:**
+- All animations use `opacity` only (NOT `transform`) to avoid conflicts with theme's `translateX(-50%)` positioning
+- Images use `.webp` format for optimal performance
+- Color palette follows professional blue/purple gradient scheme
+- All text content is in Korean
+
+### Troubleshooting
+
+**Images not loading:**
+- Ensure images are pushed to the repository
+- Verify paths start with `/assets/images/`
+- Check file extensions (.webp, .png, etc.)
+- Wait for GitHub Pages build to complete
+
+**HTTPS not working:**
+1. Check CNAME file exists and contains correct domain
+2. Verify DNS settings point to GitHub Pages IPs
+3. In GitHub Settings → Pages, remove and re-add custom domain
+4. Wait up to 24 hours for SSL certificate provisioning
+
+**Changes not appearing:**
+- Remember to push to `codestove.io` remote (not just `origin`)
+- Check GitHub Actions for build status
+- Clear browser cache (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
+- _config.yml changes require Docker restart: `docker compose restart`
+
 ## Important Notes
 
 - This is a fork of the OneFlow theme, not a gem-based theme, so theme files are directly editable
@@ -146,3 +253,4 @@ Active plugins (github-pages compatible):
 - Masthead is sticky by default with 0.85 opacity
 - HTML compression is enabled for production builds (disabled in development env)
 - Docker is the recommended development environment (no local Ruby/Jekyll setup needed)
+- Cookie consent banner is disabled (`show-popup: false` in _config.yml)
