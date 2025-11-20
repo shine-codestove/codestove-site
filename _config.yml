@@ -13,9 +13,9 @@ locale                   : "ko-KR"
 title                    : "코드스토브"
 title_separator          : "-"
 subtitle                 : " " # Displayed in the masthead below the title, use " " for no subtitle
-url                      : "https://codestove.io" # the base hostname & protocol for your site
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "ryoostar/codestove.io" # GitHub username/repo-name
+url                      : "https://shine-codestove.github.io" # the base hostname & protocol for your site
+baseurl                  : "/codestove-site" # the subpath of your site, e.g. "/blog"
+repository               : "shine-codestove/codestove-site" # GitHub username/repo-name
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/logo.webp" # Site logo displayed in the masthead
 show-popup               : false # set to false if you don't need / want to show a cookie-banner / cdn-usage popup.
