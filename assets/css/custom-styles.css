@@ -1,1 +1,319 @@
 /* Custom stylesheet, add your own styles here */
+
+/* ==========================================================================
+   Modern Design Enhancements for CodeStove
+   ========================================================================== */
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations - using opacity only to avoid transform conflicts */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animation to sections - subtle and professional */
+.site-section {
+  animation: fadeIn 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Enhanced Gallery Cards */
+.gallery__item {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery__item img {
+  transition: transform 0.3s ease;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+/* Section Headers Enhancement */
+.site-section h1 {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.site-section h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b9cba, #6f777d);
+  border-radius: 2px;
+}
+
+/* Improved Section Separator */
+hr.section-sep {
+  height: 1px !important;
+  border: none !important;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent) !important;
+  margin: 3rem auto !important;
+}
+
+/* Image Text Row Enhancement */
+.itr-container {
+  transition: all 0.3s ease;
+}
+
+.itr-image {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.itr-container:hover .itr-image {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+/* Professional subtle enhancements for text */
+.site-section h2 {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.site-section p {
+  line-height: 1.8;
+  color: #5a6c7d;
+}
+
+/* Contact Section Styling */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 3px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-top-color: #3b9cba;
+}
+
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #3b9cba 0%, #2a7a92 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(59, 156, 186, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(59, 156, 186, 0.4);
+}
+
+.contact-card h3 {
+  color: #2c3e50;
+  font-size: 1.3em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-link {
+  display: block;
+  color: #3b9cba;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #2a7a92;
+  transform: scale(1.05);
+}
+
+.contact-description {
+  color: #7a8288;
+  font-size: 0.8em!important;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* AI Highlight Box */
+.ai-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ai-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
+}
+
+.ai-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ai-text {
+  color: white;
+  margin: 0;
+  line-height: 1.8;
+  text-align: left;
+  flex: 1;
+}
+
+.ai-text strong {
+  font-size: 1.4em;
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ai-text p {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Tech Highlight Box */
+.tech-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(79, 172, 254, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tech-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(79, 172, 254, 0.4);
+}
+
+.tech-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-text {
+  color: white;
+  margin: 0;
+  line-height: 1.8;
+  text-align: left;
+  flex: 1;
+}
+
+.tech-text strong {
+  font-size: 1.4em;
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tech-text p {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .ai-highlight,
+  .tech-highlight {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .ai-text,
+  .tech-text {
+    text-align: center;
+  }
+}
